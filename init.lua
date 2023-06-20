@@ -187,8 +187,16 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
+      'nvim-treesitter/playground',
     },
     build = ':TSUpdate',
+    opts = {
+      query_linter = {
+    enable = true,
+    use_virtual_text = true,
+    lint_events = {"BufWrite", "CursorHold"},
+  },
+    }
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
